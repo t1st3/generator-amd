@@ -1,4 +1,4 @@
-# generator-amd [![Build Status](https://secure.travis-ci.org/t1st3/generator-amd.png?branch=master)](https://travis-ci.org/t1st3/generator-amd)
+# generator-amd [![Build Status](https://travis-ci.org/T1st3/generator-amd.png?branch=master)](https://travis-ci.org/T1st3/generator-amd)
 
 A generator for [Yeoman](http://yeoman.io).
 
