@@ -1,0 +1,11 @@
+{
+	"name": "",
+	"version": "",
+	"dependencies": {
+		"jquery": "2.0.3",
+		"requirejs": "2.1.9"
+	},
+	"resolutions": {
+		"jquery": "2.0.3"
+	}
+}
