@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc'
 			},
 			all: [
-				'src/<%= _.slugify(moduleName) %>.js'
+				'src/<%= _.slugify(moduleName) %>.js',
+				'example/app.js'
 			]
 		},
 		uglify: {
@@ -23,8 +24,7 @@ module.exports = function(grunt) {
 			main: {
 				files: [
 					{src: ['dist/<%= _.slugify(moduleName) %>.min.js'], dest: 'example/<%= _.slugify(moduleName) %>.min.js'},
-					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'},
-					{src: ['bower_components/requirejs/require.js'], dest: 'example/require.js'}
+					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'}
 				]
 			}
 		}

@@ -1,11 +1,25 @@
 {
 	"name": "<%= _.slugify(moduleName) %>",
 	"version": "<%= moduleVersion %>",
+	"main": "dist/<%= _.slugify(moduleName) %>.min.js",
 	"dependencies": {
-		"jquery": "2.0.3",
-		"requirejs": "2.1.9"
+		"jquery": "2.0.3"
 	},
 	"resolutions": {
 		"jquery": "2.0.3"
-	}
+	},
+	"ignore": [
+		"node_modules",
+		"bower_components",
+		"example",
+		".git",
+		".gitignore",
+		".jshintrc",
+		"Gruntfile.js",
+		"package.json"
+	],
+	"keywords": [
+		"amd",
+		"module"
+	]
 }
