@@ -12,12 +12,12 @@ require.config({
 			exports: '<%= objectName %>'
 		}
 	},
-	scriptType: "text/javascript"
+	scriptType: 'text/javascript'
 });
 
 require([
 	'jquery',
 	'<%= _.slugify(objectName) %>'
-], function($, <%= objectName %>){
+], function ($, <%= objectName %>) {
 	var a = new  <%= objectName %>();
 });

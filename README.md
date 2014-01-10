@@ -1,13 +1,22 @@
-# generator-amd 
+generator-amd 
+=============
 
-[![Build Status](https://travis-ci.org/T1st3/generator-amd.png?branch=master)](https://travis-ci.org/T1st3/generator-amd)
+About
+-----------
+
+[![NPM version](https://badge.fury.io/js/generator-amd.png)](http://badge.fury.io/js/generator-amd)
 [![Dependencies](https://david-dm.org/t1st3/generator-amd.png)](https://david-dm.org/t1st3/generator-amd)
+[![Build Status](https://travis-ci.org/T1st3/generator-amd.png?branch=master)](https://travis-ci.org/T1st3/generator-amd)
+
 
 A generator for [Yeoman](http://yeoman.io).
 
 It provides a basic boilerplate for a single AMD module.
 
-### Usage
+
+
+Usage
+-----------
 
 You must have Nodejs and NPM installed. Then, to install Yeoman globally from npm, run:
 
@@ -36,12 +45,23 @@ Yeoman will ask you 4 questions:
 
 
 
-Finally, build the minified files and the example
+Finally, once you have generated your AMD module skeleton, you can build the minified files and the example with Grunt:
 
 ```
 $ grunt build
 ```
 
-## License
+Note:
 
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
+To install Grunt globally on the command line (and run the above build task), run:
+
+```
+$ npm install -g grunt-cli
+```
+
+
+
+License
+-----------
+
+This generator is released under the [MIT License](https://github.com/T1st3/generator-amd/blob/master/LICENSE).
