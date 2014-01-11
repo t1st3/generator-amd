@@ -1,13 +1,13 @@
 generator-amd 
 =============
 
-About
------------
-
 [![NPM version](https://badge.fury.io/js/generator-amd.png)](http://badge.fury.io/js/generator-amd)
 [![Dependencies](https://david-dm.org/t1st3/generator-amd.png)](https://david-dm.org/t1st3/generator-amd)
 [![Build Status](https://travis-ci.org/T1st3/generator-amd.png?branch=master)](https://travis-ci.org/T1st3/generator-amd)
 
+
+About
+-----------
 
 A generator for [Yeoman](http://yeoman.io).
 
@@ -15,7 +15,7 @@ It provides a basic boilerplate for a single AMD module.
 
 
 
-Usage
+Installation
 -----------
 
 You must have Nodejs and NPM installed. Then, to install Yeoman globally from npm, run:
@@ -30,7 +30,23 @@ To install generator-amd globally from npm, run:
 $ npm install -g generator-amd
 ```
 
-Then, initiate the generator:
+[![NPM](https://nodei.co/npm/generator-amd.png?compact=true)](https://nodei.co/npm/generator-amd/)
+
+
+Note:
+
+In order to build your generated AMD module from its source, you will also need Grunt. To install Grunt globally on the command line (and run the above build task), run:
+
+```
+$ npm install -g grunt-cli
+```
+
+
+
+Usage
+-----------
+
+Once , initiate the generator:
 
 ```
 $ yo amd
@@ -51,13 +67,11 @@ Finally, once you have generated your AMD module skeleton, you can build the min
 $ grunt build
 ```
 
-Note:
 
-To install Grunt globally on the command line (and run the above build task), run:
+Credits
+-----------
 
-```
-$ npm install -g grunt-cli
-```
+* [Yeoman](http://yeoman.io)
 
 
 
