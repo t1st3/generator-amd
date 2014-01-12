@@ -1,6 +1,6 @@
 {
   "name": "generator-amd",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A generator for Yeoman that provides a boilerplate for a single AMD module",
   "keywords": [
     "yeoman-generator",

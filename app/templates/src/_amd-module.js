@@ -58,7 +58,7 @@ define([
 	<%= objectName %>.prototype.myPrototype = function (name, value) {
 		console.log('Method: myPrototype');
 		return name + ' | ' + value;
-	}
+	};
 
 	return <%= objectName %>;
 });
