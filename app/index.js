@@ -68,6 +68,7 @@ AmdGenerator.prototype.app = function app() {
 	this.copy('bowerrc', '.bowerrc');
 	this.template('_package.json', 'package.json');
 	this.template('_bower.json', 'bower.json');
+	this.template('_README.md', 'README.md');
 	this.copy('gitignore', '.gitignore');
 	
 };
