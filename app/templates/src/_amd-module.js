@@ -2,9 +2,10 @@
 /*
  * <%= moduleName %>
  * 
- * URL: https://github.com/<%= _.slugify(githubAccount) %>/<%= _.slugify(moduleName) %>
+ * URL: https://github.com/<%= githubAccount %>/<%= moduleName %>
  * Author: <%= githubAccount %>
- * License: https://github.com/<%= _.slugify(githubAccount) %>/<%= _.slugify(moduleName) %>/blob/master/LICENSE
+ * Version: <%= moduleVersion %>
+ * License: https://github.com/<%= githubAccount %>/<%= moduleName %>/blob/master/LICENSE
  * 
  */
 

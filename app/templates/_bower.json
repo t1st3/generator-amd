@@ -1,5 +1,5 @@
 {
-	"name": "<%= _.slugify(moduleName) %>",
+	"name": "<%= moduleName %>",
 	"version": "<%= moduleVersion %>",
 	"main": "dist/<%= _.slugify(moduleName) %>.min.js",
 	"dependencies": {
