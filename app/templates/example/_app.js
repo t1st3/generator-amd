@@ -20,4 +20,6 @@ require([
 	'<%= _.slugify(objectName) %>'
 ], function ($, <%= objectName %>) {
 	var a = new  <%= objectName %>();
+	a.myMethod('foo');
+	a.myPrototype('foo', 'bar');
 });

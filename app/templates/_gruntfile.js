@@ -27,19 +27,29 @@ module.exports = function(grunt) {
 					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'}
 				]
 			}
-		}
+		},
+		jsdoc : {
+			dist : {
+				src: ['src/*.js'], 
+				options: {
+					destination: 'doc'
+				}
+			}
+    }
 	});
 
 	// Load tasks
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-jsdoc');
 
 	// Register tasks
 	grunt.registerTask('build', [
 		'jshint',
 		'uglify',
-		'copy'
+		'copy',
+		'jsdoc'
 	]);
 	
 	grunt.registerTask('serve', [

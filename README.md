@@ -11,7 +11,14 @@ About
 
 A generator for [Yeoman](http://yeoman.io).
 
-It provides a basic boilerplate for a single AMD module.
+It provides a basic boilerplate for a single AMD module, which features:
+* dependency management with [Bower](http://bower.io)
+* automatic creation of [JSDoc](http://usejsdoc.org) documentation on build
+* a functional example
+* build with [Grunt](http://gruntjs.com), with the following tasks:
+    * JSHint
+    * minification of the module
+    * automatic creation of the documentation
 
 
 

@@ -62,6 +62,7 @@ AmdGenerator.prototype.app = function app() {
 	this.copy('example/require-2.1.9.min.js', 'example/require-2.1.9.min.js');
 	
 	this.mkdir('dist');
+	this.mkdir('doc');
 	
 	this.template('_gruntfile.js', 'Gruntfile.js');
 	this.copy('bowerrc', '.bowerrc');
