@@ -3,6 +3,7 @@
 	"version": "<%= moduleVersion %>",
 	"author": "<%= _.slugify(githubAccount) %>",
 	"homepage": "https://github.com/<%= githubAccount %>/<%= _.slugify(moduleName) %>",
+	"bugs": "https://github.com/<%= githubAccount %>/<%= _.slugify(moduleName) %>/issues",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/<%= githubAccount %>/<%= _.slugify(moduleName) %>.git"

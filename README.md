@@ -12,26 +12,32 @@ About
 A generator for [Yeoman](http://yeoman.io).
 
 It provides a basic boilerplate for a single AMD module, which features:
+
 * dependency management with [Bower](http://bower.io)
 * automatic creation of [JSDoc](http://usejsdoc.org) documentation on build
 * a functional example
-* build with [Grunt](http://gruntjs.com), with the following tasks:
-    * JSHint
-    * minification of the module
-    * automatic creation of the documentation
+* build with [Grunt](http://gruntjs.com)
 
+
+The proposed Grunt build for the generated AMD module has the following tasks:
+
+* JSHint
+* minification of the module
+* automatic creation of the documentation
 
 
 Installation
 -----------
 
-You must have Nodejs and NPM installed. Then, to install Yeoman globally from npm, run:
+You must have Nodejs and NPM installed. 
+
+Then, to install Yeoman globally from npm, run:
 
 ```
 $ npm install -g yo
 ```
 
-To install generator-amd globally from npm, run:
+Finally, to install generator-amd globally from npm, run:
 
 ```
 $ npm install -g generator-amd
@@ -53,7 +59,7 @@ $ npm install -g grunt-cli
 Usage
 -----------
 
-Once , initiate the generator:
+Once you have installed Node, NPM and Yeoman, you can initiate the generator:
 
 ```
 $ yo amd
@@ -68,7 +74,7 @@ Yeoman will ask you 4 questions:
 
 
 
-Finally, once you have generated your AMD module skeleton, you can build the minified files and the example with Grunt:
+Finally, once you have generated your AMD module skeleton, you can build the minified files, the documentation and the example with Grunt:
 
 ```
 $ grunt build
@@ -79,6 +85,10 @@ Credits
 -----------
 
 * [Yeoman](http://yeoman.io)
+* [Bower](http://bower.io)
+* [Grunt](http://gruntjs.com)
+
+ 
 
 
 

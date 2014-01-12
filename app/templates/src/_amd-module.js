@@ -36,6 +36,7 @@ define([
 		 * @memberof <%= objectName %>
 		 * @param {string|Object|number} param
 		 * @since 0.1.0
+		 * @returns {String} returns params
 		 */
 		this.myMethod = function (param) {
 			console.log('Method: myMethod | ' + param);
@@ -51,10 +52,11 @@ define([
 	 * @param {string} name
 	 * @param {string} value
 	 * @since 0.1.0
+	 * @returns {String} returns name | value
 	 */
 	<%= objectName %>.prototype.myPrototype = function (name, value) {
 		console.log('Method: myPrototype');
-		return name + ' | ' ;
+		return name + ' | ' + value;
 	}
 
 	return <%= objectName %>;
