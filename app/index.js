@@ -70,7 +70,7 @@ AmdGenerator.prototype.app = function app() {
 	this.template('_bower.json', 'bower.json');
 	this.template('_README.md', 'README.md');
 	this.copy('gitignore', '.gitignore');
-	
+	this.copy('gitattributes', '.gitattributes');
 };
 
 AmdGenerator.prototype.projectfiles = function projectfiles() {
