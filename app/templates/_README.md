@@ -6,7 +6,7 @@ About
 
 URL: [https://github.com/<%= githubAccount %>/<%= moduleName %>](https://github.com/<%= githubAccount %>/<%= moduleName %>)
 
-Author: <%= githubAccount %>
+Author: [<%= githubAccount %>](https://github.com/<%= githubAccount %>)
 
 Version: <%= moduleVersion %>
 
