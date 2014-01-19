@@ -1,11 +1,11 @@
 
 /*
  * <%= moduleName %>
- * 
- * URL: https://github.com/<%= githubAccount %>/<%= moduleName %>
- * Author: <%= githubAccount %>
- * Version: <%= moduleVersion %>
- * License: https://github.com/<%= githubAccount %>/<%= moduleName %>/blob/master/LICENSE
+ * Description of the module
+ * @link https://github.com/<%= githubAccount %>/<%= moduleName %>
+ * @author: <%= githubAccount %>
+ * @version: <%= moduleVersion %>
+ * @license: https://github.com/<%= githubAccount %>/<%= moduleName %>/blob/master/LICENSE
  * 
  */
 
@@ -22,6 +22,7 @@ define([
 	 * @module <%= objectName %>
 	 * @namespace <%= objectName %>
 	 * @version <%= moduleVersion %>
+	 * @author: <%= githubAccount %>
 	 */
 	
 	/**
