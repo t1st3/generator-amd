@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 				jshintrc: '.jshintrc'
 			},
 			all: [
-				'src/moduleName.js',
+				'src/<%= moduleName %>.js',
 				'example/app.js'
 			]
 		},
@@ -14,20 +14,20 @@ module.exports = function(grunt) {
 			options: {
 				mangle: false,
 				sourceMap: true,
-				sourceMapName: 'dist/moduleName.min.map'
+				sourceMapName: 'dist/<%= moduleName %>.min.map'
 			},
 			my_target: {
 				files: {
-					'dist/moduleName.min.js': ['src/moduleName.js']
+					'dist/<%= moduleName %>.min.js': ['src/<%= moduleName %>.js']
 				}
 			}
 		},
 		copy: {
 			main: {
 				files: [
-					{src: ['src/moduleName.js'], dest: 'dist/moduleName.js'},
-					{src: ['dist/moduleName.min.js'], dest: 'example/moduleName.min.js'},
-					{src: ['dist/moduleName.min.map'], dest: 'example/moduleName.min.map'},
+					{src: ['src/<%= moduleName %>.js'], dest: 'dist/<%= moduleName %>.js'},
+					{src: ['dist/<%= moduleName %>.min.js'], dest: 'example/<%= moduleName %>.min.js'},
+					{src: ['dist/<%= moduleName %>.min.map'], dest: 'example/<%= moduleName %>.min.map'},
 					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'},
 					{src: ['bower_components/jquery/jquery.min.map'], dest: 'example/jquery.min.map'}
 				]
