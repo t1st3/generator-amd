@@ -8,8 +8,6 @@ URL: [https://github.com/<%= githubAccount %>/<%= moduleName %>](https://github.
 
 Author: [<%= githubAccount %>](https://github.com/<%= githubAccount %>)
 
-Version: <%= moduleVersion %>
-
 
 
 Build from source

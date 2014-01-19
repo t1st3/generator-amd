@@ -1,6 +1,6 @@
 {
 	"name": "<%= moduleName %>",
-	"version": "<%= moduleVersion %>",
+	"version": "0.1.0",
 	"author": "<%= githubAccount %>",
 	"homepage": "https://github.com/<%= githubAccount %>/<%= moduleName %>",
 	"bugs": "https://github.com/<%= githubAccount %>/<%= moduleName %>/issues",

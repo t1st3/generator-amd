@@ -4,7 +4,7 @@
  * Description of the module
  * @link https://github.com/<%= githubAccount %>/<%= moduleName %>
  * @author <%= githubAccount %>
- * @version <%= moduleVersion %>
+ * @version 0.1.0
  * @license https://github.com/<%= githubAccount %>/<%= moduleName %>/blob/master/LICENSE
  * 
  */
@@ -21,7 +21,7 @@ define([
 	 * My AMD module: <%= objectName %>
 	 * @module <%= objectName %>
 	 * @namespace <%= objectName %>
-	 * @version <%= moduleVersion %>
+	 * @version 0.1.0
 	 * @author <%= githubAccount %>
 	 */
 	

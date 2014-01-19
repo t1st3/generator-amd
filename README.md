@@ -65,8 +65,7 @@ Yeoman will ask you 4 questions:
 
 1. your github account (e.g. gitaccount)
 2. the name of the repository on Github (e.g. my-amd-module)
-3. the version of the module (e.g. 0.1.0)
-4. the name of the object that handles the module (e.g. myAmdModule)
+3. the name of the function that the module defines (e.g. myAmdModule)
 
 
 Build the sources of your generated AMD module

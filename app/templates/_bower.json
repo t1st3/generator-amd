@@ -1,6 +1,6 @@
 {
 	"name": "<%= moduleName %>",
-	"version": "<%= moduleVersion %>",
+	"version": "0.1.0",
 	"main": "dist/<%= _.slugify(moduleName) %>.min.js",
 	"dependencies": {
 		"jquery": "2.0.3"

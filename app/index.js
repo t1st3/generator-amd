@@ -32,10 +32,6 @@ AmdGenerator.prototype.askFor = function askFor() {
 			message: 'What is the name of your AMD module (the slug-name of the Github repository)?'
 		},
 		{
-			name: 'moduleVersion',
-			message: 'What is the version of your AMD module?'
-		},
-		{
 			name: 'objectName',
 			message: 'What is the name of the object?'
 		}
@@ -44,7 +40,6 @@ AmdGenerator.prototype.askFor = function askFor() {
 	this.prompt(prompts, function (props) {
 		this.githubAccount = props.githubAccount;
 		this.moduleName = props.moduleName;
-		this.moduleVersion = props.moduleVersion;
 		this.objectName = props.objectName;
 		cb();
 	}.bind(this));
