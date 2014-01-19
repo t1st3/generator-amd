@@ -12,7 +12,9 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options: {
-				mangle: false
+				mangle: false,
+				sourceMap: true,
+				sourceMapName: 'dist/<%= _.slugify(moduleName) %>.min.map'
 			},
 			my_target: {
 				files: {
@@ -25,6 +27,7 @@ module.exports = function(grunt) {
 				files: [
 					{src: ['src/<%= _.slugify(moduleName) %>.js'], dest: 'dist/<%= _.slugify(moduleName) %>.js'},
 					{src: ['dist/<%= _.slugify(moduleName) %>.min.js'], dest: 'example/<%= _.slugify(moduleName) %>.min.js'},
+					{src: ['dist/<%= _.slugify(moduleName) %>.min.map'], dest: 'example/<%= _.slugify(moduleName) %>.min.map'},
 					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'}
 				]
 			}
