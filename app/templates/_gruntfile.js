@@ -46,6 +46,20 @@ module.exports = function(grunt) {
 			options: {
 				config: ".jscs.json"
 			}
+		},
+		version: {
+			js: {
+				options: {
+					prefix: '@version\\s*'
+				},
+				src: ['src/*.js']
+			},
+			json: {
+				options: {
+					prefix: '"version":\\s"*'
+				},
+				src: ['bower.json']
+			}
 		}
 	});
 
@@ -55,14 +69,17 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-jsdoc');
 	grunt.loadNpmTasks("grunt-jscs-checker");
+	grunt.loadNpmTasks("grunt-version");
 
 	// Register tasks
 	grunt.registerTask('build', [
 		'jshint',
 		'jscs',
 		'uglify',
-		'copy',
-		'jsdoc'
+		'copy:main',
+		'jsdoc:dist',
+		'version:js',
+		'version:json'
 	]);
 	
 	grunt.registerTask('serve', [
