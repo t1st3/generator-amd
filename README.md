@@ -14,17 +14,18 @@ A generator for [Yeoman](http://yeoman.io).
 It provides a basic boilerplate for a single AMD module, which features:
 
 * dependency management with [Bower](http://bower.io)
-* automatic creation of [JSDoc](http://usejsdoc.org) documentation on build
+* [JSDoc](http://usejsdoc.org) documentation created on build
 * a functional example
-* build with [Grunt](http://gruntjs.com)
+* buildable with [Grunt](http://gruntjs.com)
+* ready for [Github](https://github.com) and to be published itself on [Bower](http://bower.io)
 
 
 The proposed Grunt build for the generated AMD module has the following tasks:
 
-* JSHint
+* Code quality check: [JSHint](http://jshint.com)
 * Code style check: [JSCS](https://npmjs.org/package/jscs)
-* minification of the module
-* automatic creation of the documentation
+* Minification of the module: [UglifyJS](http://marijn.haverbeke.nl/uglifyjs)
+* Automatic creation of the documentation: [JSDoc](http://usejsdoc.org)
 
 
 Installation
@@ -47,13 +48,10 @@ npm install -g generator-amd
 [![NPM](https://nodei.co/npm/generator-amd.png?compact=true)](https://nodei.co/npm/generator-amd/)
 
 
-Note:
 
 
 
-
-
-Usage
+Usage of the generator
 -----------
 
 Once you have installed Node, NPM and Yeoman, you can initiate the generator:
@@ -70,7 +68,7 @@ Yeoman will ask you 4 questions:
 4. the name of the object that handles the module (e.g. myAmdModule)
 
 
-Build from source
+Build the sources of your generated AMD module
 -----------
 
 In order to build your generated AMD module from its source, you will also need Grunt. To install Grunt globally on the command line (and run the above build task), run:
@@ -93,7 +91,7 @@ Credits
 * [Bower](http://bower.io)
 * [Grunt](http://gruntjs.com)
 
- 
+This generator bundles [Require.js](http://requirejs.org/) for the generated example's purposes.
 
 
 
