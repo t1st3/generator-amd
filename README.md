@@ -22,6 +22,7 @@ It provides a basic boilerplate for a single AMD module, which features:
 The proposed Grunt build for the generated AMD module has the following tasks:
 
 * JSHint
+* Code style check: [JSCS](https://npmjs.org/package/jscs)
 * minification of the module
 * automatic creation of the documentation
 

@@ -71,6 +71,7 @@ AmdGenerator.prototype.app = function app() {
 	this.template('_README.md', 'README.md');
 	this.copy('gitignore', '.gitignore');
 	this.copy('gitattributes', '.gitattributes');
+	this.copy('jscs.json', '.jscs.json');
 };
 
 AmdGenerator.prototype.projectfiles = function projectfiles() {

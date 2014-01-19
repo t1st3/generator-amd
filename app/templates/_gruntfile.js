@@ -35,7 +35,13 @@ module.exports = function(grunt) {
 					destination: 'doc'
 				}
 			}
-    }
+    },
+		jscs: {
+			src: "src/*.js",
+			options: {
+				config: ".jscs.json"
+			}
+		}
 	});
 
 	// Load tasks
@@ -43,10 +49,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-jsdoc');
+	grunt.loadNpmTasks("grunt-jscs-checker");
 
 	// Register tasks
 	grunt.registerTask('build', [
 		'jshint',
+		'jscs',
 		'uglify',
 		'copy',
 		'jsdoc'
