@@ -26,6 +26,7 @@ The proposed Grunt build for the generated AMD module has the following tasks:
 * Code style check: [JSCS](https://npmjs.org/package/jscs)
 * Minification of the module: [UglifyJS](http://marijn.haverbeke.nl/uglifyjs)
 * Automatic creation of the documentation: [JSDoc](http://usejsdoc.org)
+* Automatic versioning of all the project when version is modified in package.json
 
 
 Installation
