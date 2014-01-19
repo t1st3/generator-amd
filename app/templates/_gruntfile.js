@@ -23,6 +23,7 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
+					{src: ['src/<%= _.slugify(moduleName) %>.js'], dest: 'dist/<%= _.slugify(moduleName) %>.js'},
 					{src: ['dist/<%= _.slugify(moduleName) %>.min.js'], dest: 'example/<%= _.slugify(moduleName) %>.min.js'},
 					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'}
 				]
