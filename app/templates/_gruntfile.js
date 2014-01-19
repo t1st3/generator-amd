@@ -28,7 +28,8 @@ module.exports = function(grunt) {
 					{src: ['src/<%= _.slugify(moduleName) %>.js'], dest: 'dist/<%= _.slugify(moduleName) %>.js'},
 					{src: ['dist/<%= _.slugify(moduleName) %>.min.js'], dest: 'example/<%= _.slugify(moduleName) %>.min.js'},
 					{src: ['dist/<%= _.slugify(moduleName) %>.min.map'], dest: 'example/<%= _.slugify(moduleName) %>.min.map'},
-					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'}
+					{src: ['bower_components/jquery/jquery.min.js'], dest: 'example/jquery.min.js'},
+					{src: ['bower_components/jquery/jquery.min.map'], dest: 'example/jquery.min.map'}
 				]
 			}
 		},
