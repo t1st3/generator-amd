@@ -1,4 +1,8 @@
 'use strict';
+
+var LIVERELOAD_PORT = 35729;
+var SERVER_PORT = 9000;
+
 module.exports = function (grunt) {
 	grunt.initConfig({
 		jshint: {
@@ -6,7 +10,7 @@ module.exports = function (grunt) {
 				jshintrc: '.jshintrc'
 			},
 			all: [
-				'src/<%= moduleName %>.js',
+				'src/**/*.js',
 				'example/app.js',
 				'Gruntfile.js'
 			]
@@ -36,14 +40,14 @@ module.exports = function (grunt) {
 		},
 		jsdoc : {
 			dist : {
-				src: ['src/*.js'],
+				src: ['src/**/*.js'],
 				options: {
 					destination: 'doc'
 				}
 			}
 		},
 		jscs: {
-			src: ['src/*.js', 'Gruntfile.js', 'example/app.js'],
+			src: ['src/**/*.js', 'Gruntfile.js', 'example/app.js'],
 			options: {
 				config: '.jscs.json'
 			}
@@ -53,7 +57,7 @@ module.exports = function (grunt) {
 				options: {
 					prefix: '@version\\s*'
 				},
-				src: ['src/*.js']
+				src: ['src/**/*.js']
 			},
 			json: {
 				options: {
@@ -61,10 +65,45 @@ module.exports = function (grunt) {
 				},
 				src: ['bower.json']
 			}
+		},
+		watch: {
+			options: {
+				nospawn: true,
+				livereload: true
+			},
+			js: {
+				files: ['src/**/*.js', 'example/**/*', 'Gruntfile.js'],
+				tasks: ['jshint', 'jscs', 'uglify', 'copy:main'],
+				options: {
+					livereload: {
+						port: LIVERELOAD_PORT
+					}
+				},
+			},
+		},
+		connect: {
+			options: {
+				port: SERVER_PORT,
+				hostname: 'localhost'
+			},
+			livereload: {
+				options: {
+					base: 'example'
+					
+				}
+			}
+		},
+		open: {
+			server: {
+				path: 'http://localhost:' + SERVER_PORT
+			}
 		}
 	});
 
 	// Load tasks
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-open');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -84,6 +123,8 @@ module.exports = function (grunt) {
 	]);
 	
 	grunt.registerTask('serve', [
-		'build'
+		'connect:livereload',
+		'open',
+		'watch:js'
 	]);
 };

@@ -25,6 +25,12 @@ Once you have generated your AMD module skeleton, you can build the minified fil
 grunt build
 ```
 
+You can also launch the `grunt serve` task to load the "example" folder in your browser and benefit from livereload of the page in the browser once you edit one of your source file or one of the example files:
+
+```
+grunt serve
+```
+
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 
