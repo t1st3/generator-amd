@@ -1,5 +1,5 @@
 'use strict';
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	grunt.initConfig({
 		jshint: {
 			options: {
@@ -7,7 +7,8 @@ module.exports = function(grunt) {
 			},
 			all: [
 				'src/<%= moduleName %>.js',
-				'example/app.js'
+				'example/app.js',
+				'Gruntfile.js'
 			]
 		},
 		uglify: {
@@ -16,7 +17,7 @@ module.exports = function(grunt) {
 				sourceMap: true,
 				sourceMapName: 'dist/<%= moduleName %>.min.map'
 			},
-			my_target: {
+			myTarget: {
 				files: {
 					'dist/<%= moduleName %>.min.js': ['src/<%= moduleName %>.js']
 				}
@@ -35,16 +36,16 @@ module.exports = function(grunt) {
 		},
 		jsdoc : {
 			dist : {
-				src: ['src/*.js'], 
+				src: ['src/*.js'],
 				options: {
 					destination: 'doc'
 				}
 			}
-    },
+		},
 		jscs: {
-			src: "src/*.js",
+			src: ['src/*.js', 'Gruntfile.js', 'example/app.js'],
 			options: {
-				config: ".jscs.json"
+				config: '.jscs.json'
 			}
 		},
 		version: {
@@ -68,18 +69,18 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-jsdoc');
-	grunt.loadNpmTasks("grunt-jscs-checker");
-	grunt.loadNpmTasks("grunt-version");
+	grunt.loadNpmTasks('grunt-jscs-checker');
+	grunt.loadNpmTasks('grunt-version');
 
 	// Register tasks
 	grunt.registerTask('build', [
+		'version:js',
+		'version:json',
 		'jshint',
 		'jscs',
 		'uglify',
 		'copy:main',
-		'jsdoc:dist',
-		'version:js',
-		'version:json'
+		'jsdoc:dist'
 	]);
 	
 	grunt.registerTask('serve', [
