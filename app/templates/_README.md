@@ -28,6 +28,20 @@ grunt build
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 
+Credits
+--------------
+
+<%= moduleName %> was initiated with [generator-amd](https://github.com/T1st3/generator-amd), a [Yeoman](http://yeoman.io) generator that builds an AMD module boilerplate.
+
+This project uses the following as development dependencies:
+
+* [JSHint](http://jshint.com)
+* [JSCS](https://npmjs.org/package/jscs)
+* [UglifyJS](http://marijn.haverbeke.nl/uglifyjs)
+* [JSDoc](http://usejsdoc.org)
+
+
+
 License
 --------------
 
