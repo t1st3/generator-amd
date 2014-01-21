@@ -4,6 +4,13 @@ var LIVERELOAD_PORT = 35729;
 var SERVER_PORT = 9000;
 
 module.exports = function (grunt) {
+	
+	require('load-grunt-tasks')(grunt, {
+		scope: 'devDependencies',
+		config: 'package.json',
+		pattern: ['grunt-*']
+	});
+	
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
