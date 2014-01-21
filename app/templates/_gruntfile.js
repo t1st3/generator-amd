@@ -5,6 +5,8 @@ var SERVER_PORT = 9000;
 
 module.exports = function (grunt) {
 	
+	require('time-grunt')(grunt);
+	
 	require('load-grunt-tasks')(grunt, {
 		scope: 'devDependencies',
 		config: 'package.json',
@@ -107,17 +109,6 @@ module.exports = function (grunt) {
 			}
 		}
 	});
-
-	// Load tasks
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-open');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-jsdoc');
-	grunt.loadNpmTasks('grunt-jscs-checker');
-	grunt.loadNpmTasks('grunt-version');
 
 	// Register tasks
 	grunt.registerTask('build', [
