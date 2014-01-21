@@ -1,4 +1,3 @@
-
 /*
  * <%= moduleName %>
  * Description of the module
@@ -6,7 +5,7 @@
  * @author <%= githubAccount %>
  * @version 0.1.0
  * @license https://github.com/<%= githubAccount %>/<%= moduleName %>/blob/master/LICENSE
- * 
+ * @copyright <%= githubAccount %>
  */
 
 'use strict';
