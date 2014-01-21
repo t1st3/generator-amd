@@ -27,6 +27,7 @@ The proposed Grunt build for the generated AMD module has the following tasks:
 * Minification of the module: [UglifyJS](http://marijn.haverbeke.nl/uglifyjs)
 * Automatic creation of the documentation: [JSDoc](http://usejsdoc.org)
 * Automatic versioning of all the project when version is modified in package.json
+* Opens automagically the project in your browser and reloads the page on each change made to the project (liverelaod)
 
 
 Installation
@@ -81,6 +82,12 @@ Once you have generated your AMD module skeleton, you can build the minified fil
 
 ```
 grunt build
+```
+
+You can also launch the `grunt serve` task to load the "example" folder in your browser and benefit from livereload of the page in the browser once you edit one of your source file or one of the example files:
+
+```
+grunt serve
 ```
 
 
