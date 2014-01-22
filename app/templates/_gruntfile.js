@@ -2,17 +2,21 @@
 
 var LIVERELOAD_PORT = 35729;
 var SERVER_PORT = 9000;
+var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
 
 module.exports = function (grunt) {
-	
+
 	require('time-grunt')(grunt);
-	
+
 	require('load-grunt-tasks')(grunt, {
 		scope: 'devDependencies',
 		config: 'package.json',
 		pattern: ['grunt-*']
 	});
-	
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
@@ -98,8 +102,13 @@ module.exports = function (grunt) {
 			},
 			livereload: {
 				options: {
-					base: 'example'
-					
+					base: 'example',
+					middleware: function (connect) {
+						return [
+							lrSnippet,
+							mountFolder(connect, 'example')
+						];
+					}
 				}
 			}
 		},
@@ -120,7 +129,7 @@ module.exports = function (grunt) {
 		'copy:main',
 		'jsdoc:dist'
 	]);
-	
+
 	grunt.registerTask('serve', [
 		'connect:livereload',
 		'open',
