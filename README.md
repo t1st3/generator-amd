@@ -2,7 +2,7 @@ generator-amd
 =============
 
 [![NPM version](https://badge.fury.io/js/generator-amd.png)](http://badge.fury.io/js/generator-amd)
-[![Dependencies](https://david-dm.org/t1st3/generator-amd.png)](https://david-dm.org/t1st3/generator-amd)
+[![Dependency Status](https://david-dm.org/t1st3/generator-amd.png?theme=shields.io)](https://david-dm.org/t1st3/generator-amd)
 [![Build Status](https://travis-ci.org/T1st3/generator-amd.png?branch=master)](https://travis-ci.org/T1st3/generator-amd)
 
 
@@ -90,6 +90,27 @@ You can also launch the `grunt serve` task to load the "example" folder in your 
 ```
 grunt serve
 ```
+
+
+Build the generator from its sources
+-----------
+
+The generator itself can be built from its sources. At the moment, the build process only includes syntax checks with [JSHint](http://jshint.com) and [JSCS](https://npmjs.org/package/jscs).
+
+In order to build the generator from its source, you will need Grunt. To install Grunt globally on the command line (and run the above build task), run:
+
+```
+npm install -g grunt-cli
+```
+
+Just run the `grunt task` in the folder where your generator is installed:
+
+```
+grunt
+```
+
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
 
 
 Credits
