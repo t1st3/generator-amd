@@ -2,6 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var figlet = require('figlet');
 
 
 var AmdGenerator = module.exports = function AmdGenerator(args, options, config) {
@@ -19,30 +20,38 @@ util.inherits(AmdGenerator, yeoman.generators.Base);
 AmdGenerator.prototype.askFor = function askFor() {
 	var cb = this.async();
 
-	// have Yeoman greet the user.
-	console.log(this.yeoman);
+	var t = this;
+	figlet('generator-amd', function(err, data) {
+		if (err) {
+			console.log('Something went wrong with figlet');
+			console.dir(err);
+			return;
+		} else {
+			console.log(data);
+			console.log(t.yeoman);
+			var prompts = [
+				{
+					name: 'githubAccount',
+					message: 'What is your github account?'
+				},
+				{
+					name: 'moduleName',
+					message: 'What is the name of your AMD module (the slug-name of the Github repository)?'
+				},
+				{
+					name: 'objectName',
+					message: 'What is the name of the object?'
+				}
+			];
 
-	var prompts = [
-		{
-			name: 'githubAccount',
-			message: 'What is your github account?'
-		},
-		{
-			name: 'moduleName',
-			message: 'What is the name of your AMD module (the slug-name of the Github repository)?'
-		},
-		{
-			name: 'objectName',
-			message: 'What is the name of the object?'
+			t.prompt(prompts, function (props) {
+				t.githubAccount = props.githubAccount;
+				t.moduleName = props.moduleName;
+				t.objectName = props.objectName;
+				cb();
+			}.bind(t));
 		}
-	];
-
-	this.prompt(prompts, function (props) {
-		this.githubAccount = props.githubAccount;
-		this.moduleName = props.moduleName;
-		this.objectName = props.objectName;
-		cb();
-	}.bind(this));
+	});
 };
 
 AmdGenerator.prototype.app = function app() {
