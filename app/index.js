@@ -4,8 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var figlet = require('figlet');
 
-
-var AmdGenerator = module.exports = function AmdGenerator(args, options, config) {
+var AmdGenerator = module.exports = function AmdGenerator(args, options) {
 	yeoman.generators.Base.apply(this, arguments);
 
 	this.on('end', function () {
@@ -21,7 +20,7 @@ AmdGenerator.prototype.askFor = function askFor() {
 	var cb = this.async();
 
 	var t = this;
-	figlet('generator-amd', function(err, data) {
+	figlet('generator-amd', function (err, data) {
 		if (err) {
 			console.log('Something went wrong with figlet');
 			console.dir(err);
