@@ -4,10 +4,10 @@
   "description": "A generator for Yeoman that provides a boilerplate for a single AMD module",
   "keywords": [
     "yeoman-generator",
-		"amd",
-		"requirejs",
-		"curljs",
-		"module"
+    "amd",
+    "requirejs",
+    "curljs",
+    "module"
   ],
   "homepage": "https://github.com/T1st3/generator-amd",
   "bugs": "https://github.com/T1st3/generator-amd/issues",
@@ -26,15 +26,15 @@
   },
   "dependencies": {
     "yeoman-generator": "~0.16.0",
-		"figlet": "~1.0.8"
+    "figlet": "~1.0.8"
   },
   "devDependencies": {
-    "mocha": "~1.17.0",
-		"grunt": "~0.4.2",
-		"grunt-contrib-jshint": "~0.8.0",
-		"grunt-jscs-checker": "~0.3.2",
-		"load-grunt-tasks": "~0.2.1",
-		"time-grunt": "~0.2.8"
+    "mocha": "~1.17.1",
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-jscs-checker": "~0.3.2",
+    "load-grunt-tasks": "~0.3.0",
+    "time-grunt": "~0.2.8"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
