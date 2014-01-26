@@ -5,3 +5,6 @@ before_install:
   - npm install -g grunt-cli
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-amd' ]; then cd .. && eval "mv $currentfolder generator-amd" && cd generator-amd; fi
+
+before_script:
+  - grunt
