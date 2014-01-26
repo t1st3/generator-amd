@@ -34,7 +34,8 @@
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-jscs-checker": "~0.3.2",
     "load-grunt-tasks": "~0.3.0",
-    "time-grunt": "~0.2.8"
+    "time-grunt": "~0.2.8",
+    "jshint-stylish": "~0.1.5"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
