@@ -20,13 +20,23 @@ AmdGenerator.prototype.askFor = function askFor() {
 	var cb = this.async();
 
 	var t = this;
-	figlet('generator-amd', function (err, data) {
+	figlet('yo amd', function (err, data) {
 		if (err) {
 			console.log('Something went wrong with figlet');
 			console.dir(err);
 			return;
 		} else {
 			console.log(data);
+			var updateNotifier = require('update-notifier');
+			var notifier = updateNotifier(
+				{
+					packagePath: '../package.json',
+					packageName: 'generator-amd'
+				}
+			);
+			if (notifier.update) {
+				notifier.notify();
+			}
 			console.log(t.yeoman);
 			var prompts = [
 				{
