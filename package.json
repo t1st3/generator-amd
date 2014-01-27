@@ -1,6 +1,6 @@
 {
   "name": "generator-amd",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "A generator for Yeoman that provides a boilerplate for a single AMD module",
   "keywords": [
     "yeoman-generator",
@@ -22,11 +22,12 @@
     "url": "git://github.com/t1st3/generator-amd.git"
   },
   "scripts": {
-		"test": "mocha"
+    "test": "mocha"
   },
   "dependencies": {
     "yeoman-generator": "~0.16.0",
-    "figlet": "~1.0.8"
+    "figlet": "~1.0.8",
+    "update-notifier": "~0.1.7"
   },
   "devDependencies": {
     "mocha": "~1.17.1",
