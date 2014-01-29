@@ -127,13 +127,16 @@ module.exports = function (grunt) {
 		'jshint',
 		'jscs',
 		'uglify',
-		'copy:main',
-		'jsdoc:dist'
+		'copy:main'
 	]);
 
 	grunt.registerTask('serve', [
 		'connect:livereload',
 		'open',
 		'watch:js'
+	]);
+	
+	grunt.registerTask('serve', [
+		'jsdoc:dist'
 	]);
 };
