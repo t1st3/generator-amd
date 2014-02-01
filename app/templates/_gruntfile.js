@@ -136,7 +136,7 @@ module.exports = function (grunt) {
 		'watch:js'
 	]);
 	
-	grunt.registerTask('serve', [
+	grunt.registerTask('doc', [
 		'jsdoc:dist'
 	]);
 };
