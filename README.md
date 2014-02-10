@@ -128,3 +128,7 @@ License
 -----------
 
 This generator is released under the [MIT License](https://github.com/T1st3/generator-amd/blob/master/LICENSE).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/T1st3/generator-amd/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
