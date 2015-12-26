@@ -48,9 +48,6 @@ Finally, to install generator-amd globally from npm, run:
 npm install -g generator-amd
 ```
 
-[![NPM](https://nodei.co/npm/generator-amd.png?compact=true)](https://nodei.co/npm/generator-amd/)
-
-
 
 
 
@@ -128,7 +125,3 @@ License
 -----------
 
 This generator is released under the [MIT License](https://github.com/T1st3/generator-amd/blob/master/LICENSE).
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/T1st3/generator-amd/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
