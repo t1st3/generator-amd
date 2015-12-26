@@ -9,6 +9,7 @@
     "curljs",
     "module"
   ],
+  "license": "MIT",
   "homepage": "https://github.com/T1st3/generator-amd",
   "bugs": "https://github.com/T1st3/generator-amd/issues",
   "author": {
