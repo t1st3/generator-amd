@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "figlet": "^1.0.10",
-    "update-notifier": "^0.1.10",
-    "yeoman-generator": "^0.16.0"
+    "update-notifier": "^0.6.0",
+    "yeoman-generator": "^0.22.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
