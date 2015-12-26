@@ -1,10 +1,11 @@
 'use strict';
-var util = require('util');
-var path = require('path');
-var yeoman = require('yeoman-generator');
-var figlet = require('figlet');
+var util = require('util'),
+path = require('path'),
+yeoman = require('yeoman-generator'),
+figlet = require('figlet'),
+AmdGenerator;
 
-var AmdGenerator = module.exports = function AmdGenerator(args, options) {
+AmdGenerator = module.exports = function AmdGenerator(args, options) {
 	yeoman.generators.Base.apply(this, arguments);
 
 	this.on('end', function () {
@@ -17,9 +18,11 @@ var AmdGenerator = module.exports = function AmdGenerator(args, options) {
 util.inherits(AmdGenerator, yeoman.generators.Base);
 
 AmdGenerator.prototype.askFor = function askFor() {
-	var cb = this.async();
+	var cb, t;
 
-	var t = this;
+	cb = this.async();
+
+	t = this;
 	figlet('yo amd', function (err, data) {
 		if (err) {
 			console.log('Something went wrong with figlet');
@@ -27,8 +30,10 @@ AmdGenerator.prototype.askFor = function askFor() {
 			return;
 		} else {
 			console.log(data);
-			var updateNotifier = require('update-notifier');
-			var notifier = updateNotifier(
+			var updateNotifier, notifier, prompts;
+
+			updateNotifier = require('update-notifier');
+			notifier = updateNotifier(
 				{
 					packagePath: '../package.json',
 					packageName: 'generator-amd'
@@ -38,7 +43,7 @@ AmdGenerator.prototype.askFor = function askFor() {
 				notifier.notify();
 			}
 			console.log(t.yeoman);
-			var prompts = [
+			prompts = [
 				{
 					name: 'githubAccount',
 					message: 'What is your github account?'
@@ -73,10 +78,10 @@ AmdGenerator.prototype.app = function app() {
 	this.template('example/_index.html', 'example/index.html');
 	this.copy('example/main.css', 'example/main.css');
 	this.copy('example/require-2.1.10.min.js', 'example/require-2.1.10.min.js');
-	
+
 	this.mkdir('dist');
 	this.mkdir('doc');
-	
+
 	this.template('_gruntfile.js', 'Gruntfile.js');
 	this.copy('bowerrc', '.bowerrc');
 	this.template('_package.json', 'package.json');
