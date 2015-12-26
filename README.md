@@ -1,7 +1,8 @@
 generator-amd 
 =============
 
-[![NPM version](https://badge.fury.io/js/generator-amd.png)](http://badge.fury.io/js/generator-amd)
+
+[![NPM version](https://img.shields.io/npm/v/generator-amd.svg)](https://www.npmjs.com/package/generator-amd)
 [![Dependency Status](https://david-dm.org/t1st3/generator-amd.png?theme=shields.io)](https://david-dm.org/t1st3/generator-amd)
 [![Build Status](https://travis-ci.org/T1st3/generator-amd.png?branch=master)](https://travis-ci.org/T1st3/generator-amd)
 
