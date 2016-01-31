@@ -4,7 +4,7 @@ generator-amd
 
 [![NPM version](https://img.shields.io/npm/v/generator-amd.svg)](https://www.npmjs.com/package/generator-amd)
 [![Dependency Status](https://david-dm.org/t1st3/generator-amd.png?theme=shields.io)](https://david-dm.org/t1st3/generator-amd)
-[![Build Status](https://travis-ci.org/T1st3/generator-amd.png?branch=master)](https://travis-ci.org/T1st3/generator-amd)
+[![Build Status](https://travis-ci.org/t1st3/generator-amd.png?branch=master)](https://travis-ci.org/t1st3/generator-amd)
 
 
 About
@@ -124,4 +124,4 @@ This generator bundles [Require.js](http://requirejs.org/) for the generated exa
 License
 -----------
 
-This generator is released under the [MIT License](https://github.com/T1st3/generator-amd/blob/master/LICENSE).
+This generator is released under the [MIT License](https://github.com/t1st3/generator-amd/blob/master/LICENSE).

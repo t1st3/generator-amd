@@ -10,12 +10,12 @@
     "module"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/T1st3/generator-amd",
-  "bugs": "https://github.com/T1st3/generator-amd/issues",
+  "homepage": "https://github.com/t1st3/generator-amd",
+  "bugs": "https://github.com/t1st3/generator-amd/issues",
   "author": {
-    "name": "T1st3",
+    "name": "t1st3",
     "email": "contact@tiste.org",
-    "url": "https://github.com/T1st3"
+    "url": "https://github.com/t1st3"
   },
   "main": "app/index.js",
   "repository": {
