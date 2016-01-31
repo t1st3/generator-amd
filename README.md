@@ -61,7 +61,7 @@ Once you have installed Node, NPM and Yeoman, you can initiate the generator:
 yo amd
 ```
 
-Yeoman will ask you 4 questions:
+Yeoman will ask you 3 questions:
 
 1. your github account (e.g. gitaccount)
 2. the name of the repository on Github (e.g. my-amd-module)
@@ -115,7 +115,6 @@ Credits
 -----------
 
 * [Yeoman](http://yeoman.io)
-* [Bower](http://bower.io)
 * [Grunt](http://gruntjs.com)
 
 This generator bundles [Require.js](http://requirejs.org/) for the generated example's purposes.
