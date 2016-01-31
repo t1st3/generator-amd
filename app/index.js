@@ -1,8 +1,9 @@
 'use strict';
+
 var util = require('util'),
-path = require('path'),
-yeoman = require('yeoman-generator'),
-figlet = require('figlet'),
+    yeoman = require('yeoman-generator'),
+    figlet = require('figlet'),
+
 AmdGenerator;
 
 AmdGenerator = module.exports = function AmdGenerator(args, options) {
@@ -12,7 +13,7 @@ AmdGenerator = module.exports = function AmdGenerator(args, options) {
 		this.installDependencies({ skipInstall: options['skip-install'] });
 	});
 
-	this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+	this.pkg = require('../package.json');
 };
 
 util.inherits(AmdGenerator, yeoman.generators.Base);
@@ -35,14 +36,18 @@ AmdGenerator.prototype.askFor = function askFor() {
 			updateNotifier = require('update-notifier');
 			notifier = updateNotifier(
 				{
-					packagePath: '../package.json',
-					packageName: 'generator-amd'
+					pkg: t.pkg
 				}
 			);
+
 			if (notifier.update) {
 				notifier.notify();
 			}
-			console.log(t.yeoman);
+
+			if (t.yeoman) {
+				console.log(t.yeoman);
+			}
+
 			prompts = [
 				{
 					name: 'githubAccount',
@@ -59,9 +64,19 @@ AmdGenerator.prototype.askFor = function askFor() {
 			];
 
 			t.prompt(prompts, function (props) {
+				var slugify = function (text) {
+					return text.toString().toLowerCase()
+					.replace(/\s+/g, '-') // Replace spaces with -
+					.replace(/[^\w\-]+/g, '') // Remove all non-word chars
+					.replace(/\-\-+/g, '-') // Replace multiple - with single -
+					.replace(/^-+/, '') // Trim - from start of text
+					.replace(/-+$/, ''); // Trim - from end of text
+				};
 				t.githubAccount = props.githubAccount;
 				t.moduleName = props.moduleName;
+				t.moduleSlug = slugify(props.moduleName);
 				t.objectName = props.objectName;
+				t.objectSlug = slugify(props.objectName);
 				cb();
 			}.bind(t));
 		}

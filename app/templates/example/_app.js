@@ -3,13 +3,13 @@ require.config({
 	baseUrl: '',
 	paths: {
 		jquery: 'jquery.min',
-		<%= _.slugify(objectName) %>: '<%= _.slugify(moduleName) %>.min'
+		<%= objectSlug %>: '<%= moduleSlug %>.min'
 	},
 	shim: {
 		jquery: {
 			exports: '$'
 		},
-		<%= _.slugify(objectName) %>: {
+		<%= objectSlug %>: {
 			exports: '<%= objectName %>'
 		}
 	},
@@ -18,7 +18,7 @@ require.config({
 
 require([
 	'jquery',
-	'<%= _.slugify(objectName) %>'
+	'<%= objectSlug %>'
 ], function ($, <%= objectName %>) {
 	var a = new  <%= objectName %>();
 	a.myMethod('foo');
