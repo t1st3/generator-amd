@@ -1,13 +1,13 @@
 'use strict';
 
 var util = require('util'),
-    yeoman = require('yeoman-generator'),
+    base = require('yeoman-generator').Base,
     figlet = require('figlet'),
 
 AmdGenerator;
 
 AmdGenerator = module.exports = function AmdGenerator(args, options) {
-	yeoman.generators.Base.apply(this, arguments);
+	base.apply(this, arguments);
 
 	this.on('end', function () {
 		this.installDependencies({ skipInstall: options['skip-install'] });
@@ -16,7 +16,7 @@ AmdGenerator = module.exports = function AmdGenerator(args, options) {
 	this.pkg = require('../package.json');
 };
 
-util.inherits(AmdGenerator, yeoman.generators.Base);
+util.inherits(AmdGenerator, base);
 
 AmdGenerator.prototype.askFor = function askFor() {
 	var cb, t;
