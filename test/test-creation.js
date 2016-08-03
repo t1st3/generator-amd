@@ -1,8 +1,9 @@
+/* global describe,it,before */
 'use strict';
 
-var path = require('path'),
-assert = require('yeoman-assert'),
-helpers = require('yeoman-test');
+var path = require('path');
+var assert = require('yeoman-assert');
+var helpers = require('yeoman-test');
 
 describe('yo amd:app', function () {
 	before(function (done) {

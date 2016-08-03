@@ -24,7 +24,7 @@
   },
   "scripts": {
     "pretest": "xo test/* app/index.js",
-    "test": "xo && mocha"
+    "test": "mocha"
   },
   "dependencies": {
     "figlet": "^1.1.2",

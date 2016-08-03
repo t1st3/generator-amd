@@ -1,13 +1,11 @@
 'use strict';
 
-var util = require('util'),
-generators = require('yeoman-generator'),
-figlet = require('figlet'),
-updateNotifier = require('update-notifier'),
-pkg = require('../package.json'),
-AmdGenerator;
+var generators = require('yeoman-generator');
+var figlet = require('figlet');
+var updateNotifier = require('update-notifier');
+var pkg = require('../package.json');
 
-AmdGenerator = module.exports = generators.Base.extend({
+module.exports = generators.Base.extend({
 	constructor: function () {
 		generators.Base.apply(this, arguments);
 		var done = this.async();
@@ -22,6 +20,7 @@ AmdGenerator = module.exports = generators.Base.extend({
 			if (err) {
 				done(err);
 			} else {
+				console.log(data);
 				done();
 			}
 		});
@@ -83,6 +82,6 @@ AmdGenerator = module.exports = generators.Base.extend({
 		this.copy('jshintrc', '.jshintrc');
 	},
 	install: function () {
-		this.installDependencies({ skipInstall: this.option('skip-install') });
+		this.installDependencies({skipInstall: this.option('skip-install')});
 	}
 });
