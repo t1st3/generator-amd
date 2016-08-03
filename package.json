@@ -1,6 +1,7 @@
 {
   "name": "generator-amd",
   "version": "0.11.1",
+  "license": "MIT",
   "description": "A generator for Yeoman that provides a boilerplate for a single AMD module",
   "keywords": [
     "yeoman-generator",
@@ -40,10 +41,5 @@
   "engines": {
     "node": ">=0.10.0",
     "npm": ">=1.2.10"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  }
 }
