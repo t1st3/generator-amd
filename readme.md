@@ -124,4 +124,4 @@ This generator bundles [Require.js](http://requirejs.org/) for the generated exa
 License
 -----------
 
-This generator is released under the [MIT License](https://github.com/t1st3/generator-amd/blob/master/LICENSE).
+This generator is released under the [MIT License](https://github.com/t1st3/generator-amd/blob/master/license).
