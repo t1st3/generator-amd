@@ -10,8 +10,6 @@
     "curljs",
     "module"
   ],
-  "homepage": "https://github.com/t1st3/generator-amd",
-  "bugs": "https://github.com/t1st3/generator-amd/issues",
   "author": {
     "name": "t1st3",
     "email": "contact@tiste.org",
