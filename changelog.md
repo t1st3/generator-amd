@@ -1,6 +1,15 @@
 ## Change Log
 
+### 1.0.0 (2016/10/14 14:39 +00:00)
+- [102ab38](https://github.com/t1st3/generator-amd/commit/102ab38819ba586bb092e7b6c1c12b696b2a4fbb) chore: BREAKING - drop support for Node.js 0.10 and 0.12 (@t1st3)
+- [127cf94](https://github.com/t1st3/generator-amd/commit/127cf944fe21c07de452312405a39522484f1a4b) chore: set unicorn version for xo (@t1st3)
+- [5b456dd](https://github.com/t1st3/generator-amd/commit/5b456dd1a63f1a7e6232325797d95693cac0efc2) docs(readme): fix license url (@t1st3)
+- [316f0c8](https://github.com/t1st3/generator-amd/commit/316f0c8d9c1723a4037b1ecd79508b1e34a95904) chore(package): remove moot sections (@t1st3)
+- [3713270](https://github.com/t1st3/generator-amd/commit/3713270da7b4f1358977ca7aa628b7449e4608e7) chore: bump deps (@t1st3)
+- [1e53a4d](https://github.com/t1st3/generator-amd/commit/1e53a4da742f6823fb96bf75f7496f15ddede3cb) fix(package): license field (@t1st3)
+
 ### 0.11.1 (2016/08/03 11:24 +00:00)
+- [107baf1](https://github.com/t1st3/generator-amd/commit/107baf196b8362b16b25da1478752734a0580407) chore: v0.11.1 (@t1st3)
 - [0ba4824](https://github.com/t1st3/generator-amd/commit/0ba482470428d48ca617689c53a7365296842d63) fix: travis and and node 6 to jobs (@t1st3)
 
 ### 0.11.0 (2016/08/03 11:14 +00:00)
