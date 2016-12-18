@@ -5,9 +5,10 @@ var figlet = require('figlet');
 var updateNotifier = require('update-notifier');
 var pkg = require('../package.json');
 
-module.exports = generators.Base.extend({
-	constructor: function () {
-		generators.Base.apply(this, arguments);
+module.exports = class extends generators {
+	constructor(args, opts) {
+		super(args, opts);
+		this.res = {};
 		var done = this.async();
 		var notifier = updateNotifier({
 			pkg: pkg
@@ -24,8 +25,8 @@ module.exports = generators.Base.extend({
 				done();
 			}
 		});
-	},
-	prompting: function () {
+	}
+	prompting() {
 		return this.prompt([{
 			type: 'input',
 			name: 'githubAccount',
@@ -50,38 +51,55 @@ module.exports = generators.Base.extend({
 				.replace(/^-+/, '') // Trim - from start of text
 				.replace(/-+$/, ''); // Trim - from end of text
 			};
-			this.githubAccount = answers.githubAccount;
-			this.moduleName = answers.moduleName;
-			this.moduleSlug = slugify(answers.moduleName);
-			this.objectName = answers.objectName;
-			this.objectSlug = slugify(answers.objectName);
+			this.res.githubAccount = answers.githubAccount;
+			this.res.moduleName = answers.moduleName;
+			this.res.moduleSlug = slugify(answers.moduleName);
+			this.res.objectName = answers.objectName;
+			this.res.objectSlug = slugify(answers.objectName);
 		}.bind(this));
-	},
-	writing: function () {
-		this.mkdir('src');
-		this.template('src/_amd-module.js', 'src/' + this.moduleName + '.js');
+	}
+	writing() {
+		// this.mkdirp('src');
+		var self = this;
 
-		this.mkdir('example');
-		this.template('example/_app.js', 'example/app.js');
-		this.template('example/_index.html', 'example/index.html');
-		this.copy('example/main.css', 'example/main.css');
-		this.copy('example/require-2.1.10.min.js', 'example/require-2.1.10.min.js');
+		var tpl = function (input, output) {
+			self.fs.copyTpl(
+				self.templatePath(input),
+				self.destinationPath(output),
+				self.res
+			);
+		};
 
-		this.mkdir('dist');
-		this.mkdir('doc');
+		var cp = function (input, output) {
+			self.fs.copy(
+				self.templatePath(input),
+				self.destinationPath(output)
+			);
+		};
 
-		this.template('_gruntfile.js', 'Gruntfile.js');
-		this.copy('bowerrc', '.bowerrc');
-		this.template('_package.json', 'package.json');
-		this.template('_bower.json', 'bower.json');
-		this.template('_README.md', 'README.md');
-		this.copy('gitignore', '.gitignore');
-		this.copy('gitattributes', '.gitattributes');
-		this.copy('jscs.json', '.jscs.json');
-		this.copy('editorconfig', '.editorconfig');
-		this.copy('jshintrc', '.jshintrc');
-	},
-	install: function () {
+		tpl('src/_amd-module.js', 'src/' + this.moduleName + '.js');
+
+		// this.mkdirp('example');
+		tpl('example/_app.js', 'example/app.js');
+		tpl('example/_index.html', 'example/index.html');
+		cp('example/main.css', 'example/main.css');
+		cp('example/require-2.1.10.min.js', 'example/require-2.1.10.min.js');
+
+		// this.mkdirp('dist');
+		// this.mkdirp('doc');
+
+		tpl('_gruntfile.js', 'Gruntfile.js');
+		cp('bowerrc', '.bowerrc');
+		tpl('_package.json', 'package.json');
+		tpl('_bower.json', 'bower.json');
+		tpl('_README.md', 'README.md');
+		cp('gitignore', '.gitignore');
+		cp('gitattributes', '.gitattributes');
+		cp('jscs.json', '.jscs.json');
+		cp('editorconfig', '.editorconfig');
+		cp('jshintrc', '.jshintrc');
+	}
+	install() {
 		this.installDependencies({skipInstall: this.option('skip-install')});
 	}
-});
+};
