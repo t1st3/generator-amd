@@ -59,9 +59,7 @@ module.exports = class extends generators {
 		}.bind(this));
 	}
 	writing() {
-		// this.mkdirp('src');
 		var self = this;
-
 		var tpl = function (input, output) {
 			self.fs.copyTpl(
 				self.templatePath(input),
@@ -69,7 +67,6 @@ module.exports = class extends generators {
 				self.res
 			);
 		};
-
 		var cp = function (input, output) {
 			self.fs.copy(
 				self.templatePath(input),
@@ -78,16 +75,10 @@ module.exports = class extends generators {
 		};
 
 		tpl('src/_amd-module.js', 'src/' + this.moduleName + '.js');
-
-		// this.mkdirp('example');
 		tpl('example/_app.js', 'example/app.js');
 		tpl('example/_index.html', 'example/index.html');
 		cp('example/main.css', 'example/main.css');
 		cp('example/require-2.1.10.min.js', 'example/require-2.1.10.min.js');
-
-		// this.mkdirp('dist');
-		// this.mkdirp('doc');
-
 		tpl('_gruntfile.js', 'Gruntfile.js');
 		cp('bowerrc', '.bowerrc');
 		tpl('_package.json', 'package.json');
