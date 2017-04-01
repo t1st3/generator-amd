@@ -1,6 +1,8 @@
 generator-amd 
 =============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/t1st3/generator-amd.svg)](https://greenkeeper.io/)
+
 
 [![NPM version](https://img.shields.io/npm/v/generator-amd.svg)](https://www.npmjs.com/package/generator-amd)
 [![Dependency Status](https://david-dm.org/t1st3/generator-amd.png?theme=shields.io)](https://david-dm.org/t1st3/generator-amd)
