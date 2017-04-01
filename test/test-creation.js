@@ -1,12 +1,12 @@
 /* global describe,it,before */
 'use strict';
 
-var path = require('path');
-var assert = require('yeoman-assert');
-var helpers = require('yeoman-test');
+const path = require('path');
+const assert = require('yeoman-assert');
+const helpers = require('yeoman-test');
 
-describe('yo amd:app', function () {
-	before(function (done) {
+describe('yo amd:app', () => {
+	before(done => {
 		helpers.run(path.join(__dirname, '../app'))
 		.inDir(path.join(__dirname, '../../tmp'))
 		.withOptions({
@@ -20,7 +20,7 @@ describe('yo amd:app', function () {
 		.on('end', done);
 	});
 
-	it('creates files', function () {
+	it('creates files', () => {
 		assert.file([
 			'.jshintrc',
 			'.editorconfig',

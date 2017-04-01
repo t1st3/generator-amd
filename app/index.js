@@ -1,23 +1,23 @@
 'use strict';
 
-var generators = require('yeoman-generator');
-var figlet = require('figlet');
-var updateNotifier = require('update-notifier');
-var pkg = require('../package.json');
+const generators = require('yeoman-generator');
+const figlet = require('figlet');
+const updateNotifier = require('update-notifier');
+const pkg = require('../package.json');
 
 module.exports = class extends generators {
 	constructor(args, opts) {
 		super(args, opts);
 		this.res = {};
-		var done = this.async();
-		var notifier = updateNotifier({
-			pkg: pkg
+		const done = this.async();
+		const notifier = updateNotifier({
+			pkg
 		});
 		if (notifier.update) {
 			notifier.notify();
 		}
 
-		figlet('yo amd', function (err, data) {
+		figlet('yo amd', (err, data) => {
 			if (err) {
 				done(err);
 			} else {
@@ -39,11 +39,11 @@ module.exports = class extends generators {
 			type: 'input',
 			name: 'objectName',
 			message: 'What is the name of the object?'
-		}]).then(function (answers) {
+		}]).then(function (answers) { // eslint-disable-line prefer-arrow-callback
 			this.log('github account', answers.githubAccount);
 			this.log('module name', answers.moduleName);
 			this.log('object name', answers.objectName);
-			var slugify = function (text) {
+			const slugify = function (text) {
 				return text.toString().toLowerCase()
 				.replace(/\s+/g, '-') // Replace spaces with -
 				.replace(/[^\w-]+/g, '') // Remove all non-word chars
@@ -59,15 +59,15 @@ module.exports = class extends generators {
 		}.bind(this));
 	}
 	writing() {
-		var self = this;
-		var tpl = function (input, output) {
+		const self = this;
+		const tpl = function (input, output) {
 			self.fs.copyTpl(
 				self.templatePath(input),
 				self.destinationPath(output),
 				self.res
 			);
 		};
-		var cp = function (input, output) {
+		const cp = function (input, output) {
 			self.fs.copy(
 				self.templatePath(input),
 				self.destinationPath(output)
