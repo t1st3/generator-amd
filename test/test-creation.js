@@ -8,16 +8,16 @@ const helpers = require('yeoman-test');
 describe('yo amd:app', () => {
 	before(done => {
 		helpers.run(path.join(__dirname, '../app'))
-		.inDir(path.join(__dirname, '../../tmp'))
-		.withOptions({
-			'skip-install': true
-		})
-		.withPrompts({
-			moduleName: 'my-super-module',
-			githubAccount: 'myGitAccount',
-			objectName: 'mySuperModule'
-		})
-		.on('end', done);
+			.inDir(path.join(__dirname, '../../tmp'))
+			.withOptions({
+				'skip-install': true
+			})
+			.withPrompts({
+				moduleName: 'my-super-module',
+				githubAccount: 'myGitAccount',
+				objectName: 'mySuperModule'
+			})
+			.on('end', done);
 	});
 
 	it('creates files', () => {

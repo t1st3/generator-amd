@@ -26,6 +26,7 @@ module.exports = class extends generators {
 			}
 		});
 	}
+
 	prompting() {
 		return this.prompt([{
 			type: 'input',
@@ -45,11 +46,11 @@ module.exports = class extends generators {
 			this.log('object name', answers.objectName);
 			const slugify = function (text) {
 				return text.toString().toLowerCase()
-				.replace(/\s+/g, '-') // Replace spaces with -
-				.replace(/[^\w-]+/g, '') // Remove all non-word chars
-				.replace(/--+/g, '-') // Replace multiple - with single -
-				.replace(/^-+/, '') // Trim - from start of text
-				.replace(/-+$/, ''); // Trim - from end of text
+					.replace(/\s+/g, '-') // Replace spaces with -
+					.replace(/[^\w-]+/g, '') // Remove all non-word chars
+					.replace(/--+/g, '-') // Replace multiple - with single -
+					.replace(/^-+/, '') // Trim - from start of text
+					.replace(/-+$/, ''); // Trim - from end of text
 			};
 			this.res.githubAccount = answers.githubAccount;
 			this.res.moduleName = answers.moduleName;
@@ -58,6 +59,7 @@ module.exports = class extends generators {
 			this.res.objectSlug = slugify(answers.objectName);
 		}.bind(this));
 	}
+
 	writing() {
 		const self = this;
 		const tpl = function (input, output) {
@@ -90,6 +92,7 @@ module.exports = class extends generators {
 		cp('editorconfig', '.editorconfig');
 		cp('jshintrc', '.jshintrc');
 	}
+
 	install() {
 		this.installDependencies({skipInstall: this.option('skip-install')});
 	}
