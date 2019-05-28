@@ -1,6 +1,6 @@
 {
   "name": "generator-amd",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "A generator for Yeoman that provides a boilerplate for a single AMD module",
   "keywords": [
