@@ -5,6 +5,15 @@ const figlet = require('figlet');
 const updateNotifier = require('update-notifier');
 const pkg = require('../package.json');
 
+const slugify = function (text) {
+	return text.toString().toLowerCase()
+		.replace(/\s+/g, '-') // Replace spaces with -
+		.replace(/[^\w-]+/g, '') // Remove all non-word chars
+		.replace(/--+/g, '-') // Replace multiple - with single -
+		.replace(/^-+/, '') // Trim - from start of text
+		.replace(/-+$/, ''); // Trim - from end of text
+};
+
 module.exports = class extends generators {
 	constructor(args, opts) {
 		super(args, opts);
@@ -28,7 +37,7 @@ module.exports = class extends generators {
 	}
 
 	prompting() {
-		return this.prompt([{
+		const prompts = [{
 			type: 'input',
 			name: 'githubAccount',
 			message: 'What is your github account?'
@@ -40,25 +49,19 @@ module.exports = class extends generators {
 			type: 'input',
 			name: 'objectName',
 			message: 'What is the name of the object?'
-		}]).then(function (answers) { // eslint-disable-line prefer-arrow-callback
+		}];
+
+		return this.prompt(prompts).then(answers => { // eslint-disable-line promise/prefer-await-to-then
 			this.log('github account', answers.githubAccount);
 			this.log('module name', answers.moduleName);
 			this.log('object name', answers.objectName);
-			const slugify = function (text) {
-				return text.toString().toLowerCase()
-					.replace(/\s+/g, '-') // Replace spaces with -
-					.replace(/[^\w-]+/g, '') // Remove all non-word chars
-					.replace(/--+/g, '-') // Replace multiple - with single -
-					.replace(/^-+/, '') // Trim - from start of text
-					.replace(/-+$/, ''); // Trim - from end of text
-			};
 
 			this.res.githubAccount = answers.githubAccount;
 			this.res.moduleName = answers.moduleName;
 			this.res.moduleSlug = slugify(answers.moduleName);
 			this.res.objectName = answers.objectName;
 			this.res.objectSlug = slugify(answers.objectName);
-		}.bind(this));
+		});
 	}
 
 	writing() {
