@@ -52,6 +52,7 @@ module.exports = class extends generators {
 					.replace(/^-+/, '') // Trim - from start of text
 					.replace(/-+$/, ''); // Trim - from end of text
 			};
+
 			this.res.githubAccount = answers.githubAccount;
 			this.res.moduleName = answers.moduleName;
 			this.res.moduleSlug = slugify(answers.moduleName);
@@ -69,6 +70,7 @@ module.exports = class extends generators {
 				self.res
 			);
 		};
+
 		const cp = function (input, output) {
 			self.fs.copy(
 				self.templatePath(input),
